@@ -1,0 +1,39 @@
+:root { 
+    --text-color: #000000; 
+    --background-color: #FFFFFF; 
+    --link-color: #4a76ee; 
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: "Playwrite Ireland", "Rubik", "Comic Neue", "sans-serif";
+    background-color: var(--background-color);
+}
+/* 
+.first-look { 
+    text-
+} */
+
+button {
+    font-family: inherit;
+}
+
+.first-look { 
+    display: flex; /* flexbox display */
+    justify-self: space; 
+    align-items: center; /* have the text align in the center based on the height of its parent element */
+    padding: 0 50px; /* no padding on the y-axis, 50 px padding on the x-axis to match our nav bar */
+    margin: 50px 0; /* add spacing between the nav bar and the next section: 50 px on the y-axis, 0 on the x-axis */
+    margin-bottom: 100px; /* gap between hero and next section */
+    gap: 40px; /* a gap of about 40 px between the text and the image */
+}
+
+.first-look .first-text h2 { 
+    align-items: center;
+    font-size: 45px; 
+}
