@@ -19,15 +19,34 @@
     <title>Hineni</title>
 </head>
 <body>
-    <nav> <!-- navigation bar -->
-
+    <nav class = "navigation-bar"> <!-- navigation bar -->
+        <a href="#" class = "navigation">
+            Hineni
+        </a>
+        <div class = "navigation-links"> <!-- a few navigation links specifically so that you can scroll down easier -->
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#tracks">Tracks</a>
+            <a href="#accessibility">Accessibility</a>
+        </div>
     </nav>
 
 
     <!-- MAIN AREA -->
     <main>
+        <!-- HERO SECTION basically just the part where it's briefly explained -->
+        <section id = "home" class = "home-section">
+            <div class = "home-image">
+                <img src="images/red-banner-png-7.png" alt="">
+            </div>
+
+            <h1 class = "home-title">Hineni</h1>
+            <p class = "home-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nulla ducimus quibusdam inventore laborum. Provident reprehenderit, id, adipisci, maxime reiciendis omnis soluta aliquid facere hic sint tenetur. Numquam, quia velit expedita molestias minima corrupti modi perferendis, unde sint quibusdam atque odit. Veritatis at sequi quae sunt. Architecto necessitatibus recusandae quis.</p>
+
+        </section>
+        
         <!-- FIRST LOOK SECTION is basically the section with the title & body paragraph el oh el -->
-        <section class = "first-look">
+        <section id = "about" class = "first-look">
             <div class = "first-text">
                 <h2>
                     Hineni
@@ -41,12 +60,53 @@
                 <img src="images/temp_hineni_logo.png" alt="">
             </div>
         </section>
-        <section class = "dyslexic-button">
-            <button id = "DyslexicFont">
-                Make Website Dyslexic-Friendly
-            </button>
-            <script src = "script.js"></script>
+
+
+
+        <!-- 
+        SECTION 3: PROJECTS/TRACKS AND STUFF 
+        -->
+        <!-- i want this to look like there's two circles, each one taking u to a diff "track" of this ysws -->
+        <section id = "tracks" class = "circles">
+            <h2 class = "tracks-heading">Two Journeys</h2> <!-- this part is the title of the two circles, each of which is a diff track -->
+            <div class = "container"> <!-- the section for all teh content -->
+                <a href="track1.html" class = "track-1">
+                    <div class = "track-1-card">
+                        <img src="images/one-vector.webp" alt="Track1Project" class = "track-1-image">
+                        <span class = "track-1-label">Track 1</span>
+                    </div>
+                </a>
+                <a href="track2.html" class = "track-2">
+                    <div class = "track-2-card">
+                        <img src="images/2-stockimage.jpg" alt="" class = "track-2-image">
+                        <span class = "track-2-label">Track 2</span>
+                    </div>
+
+                </a>
+            </div>
+
         </section>
+
+
+
+
+        <!-- 
+        SECTION LAST PART
+        dyslexia button 
+         -->
+        <section id = "accessibility" class = "accessibility-section">
+            <div class = "font-buttons">
+                <button id = "DyslexicFont" class = "dyslexic-button">
+                    <span class = "dyslexia-button-text">Dyslexic-Friendly Font</span>
+                </button>
+                <button id = "ReturnDefault" class = "default-button">
+                    Return to Default
+                </button>
+            </div>
+            <script src = "script.js"></script>
+                <!-- <script src = "script.js"></script> -->
+        </section>
+
     </main>
 
 </body>
