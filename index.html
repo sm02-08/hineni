@@ -27,7 +27,8 @@
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#tracks">Tracks</a>
-            <a href="#accessibility">Accessibility</a>
+            <a href="#prizes">Prizes</a>
+            <a ref="#accessibility">Accessibility</a>
         </div>
     </nav>
 
@@ -72,29 +73,79 @@
             <div class = "container"> <!-- the section for all teh content -->
                 <a href="track1.html" class = "track-1">
                     <div class = "track-1-card">
-                        <img src="images/one-vector.webp" alt="Track1Project" class = "track-1-image">
+                        <div class = "track-1-wrapper">
+                            <img src="images/one-vector.webp" alt="Track1Project" class = "track-1-image">
+                            <div class = "track-1-hover">
+                                <img src="images/counting-one.jpg" alt="Track 1 preview" class = "track-hover-img">
+                                <span class = "track-hover-label">The Compact</span>
+                            </div>
+                        </div>
                         <span class = "track-1-label">Track 1</span>
                     </div>
                 </a>
                 <a href="track2.html" class = "track-2">
                     <div class = "track-2-card">
-                        <img src="images/2-stockimage.jpg" alt="" class = "track-2-image">
+                        <div class = "track-2-wrapper">
+                            <img src="images/2-stockimage.jpg" alt="" class = "track-2-image">
+                            <div class = "track-2-hover">
+                                <img src="images/counting-two.webp" alt="" class = "track-hover-img">
+                                <span class = "track-hover-label">Kairos</span>
+                            </div>
+                        </div>
                         <span class = "track-2-label">Track 2</span>
                     </div>
-
                 </a>
             </div>
 
         </section>
 
-
-
-
         <!-- 
-        SECTION LAST PART
-        dyslexia button 
-         -->
-        <section id = "accessibility" class = "accessibility-section">
+        --
+        PRIZES SECTION HERE
+        --
+        i want an infinite carousel type thing with images yk
+        -->
+        <section id = "prizes" class = "prizes-section">
+            <h2 class = "prizes-heading">Prizes</h2>
+            <div class = "prizes-track-wrapper">
+                <div class = "prizes-track">
+                    <!-- A S**T TON OF IMAGES BECAUSE I DONT KNOW HOW ELSE TO DO THIS -->
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/d4e0f7/4a76ee?text=Photo+1" alt="Photo 1"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/f7d4d4/bf5a5a?text=Photo+2" alt="Photo 2"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/d4f1e0/3a9a5c?text=Photo+3" alt="Photo 3"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/f7f0d4/b89a30?text=Photo+4" alt="Photo 4"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/ead4f7/8040b0?text=Photo+5" alt="Photo 5"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/d4eef7/2a7fa0?text=Photo+6" alt="Photo 6"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/f7d4eb/c0408a?text=Photo+7" alt="Photo 7"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/d4f7ef/2aaa90?text=Photo+8" alt="Photo 8"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/f7ead4/c07030?text=Photo+9" alt="Photo 9"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/d4d4f7/4040c0?text=Photo+10" alt="Photo 10"></div>
+                    <!-- Duplicate set — makes the scroll loop seamless -->
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/d4e0f7/4a76ee?text=Photo+1" alt="Photo 1"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/f7d4d4/bf5a5a?text=Photo+2" alt="Photo 2"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/d4f1e0/3a9a5c?text=Photo+3" alt="Photo 3"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/f7f0d4/b89a30?text=Photo+4" alt="Photo 4"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/ead4f7/8040b0?text=Photo+5" alt="Photo 5"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/d4eef7/2a7fa0?text=Photo+6" alt="Photo 6"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/f7d4eb/c0408a?text=Photo+7" alt="Photo 7"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/d4f7ef/2aaa90?text=Photo+8" alt="Photo 8"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/f7ead4/c07030?text=Photo+9" alt="Photo 9"></div>
+                    <div class="prizes-item"><img src="https://placehold.co/300x200/d4d4f7/4040c0?text=Photo+10" alt="Photo 10"></div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </main>
+    <!-- 
+    SECTION LAST PART
+    dyslexia button 
+    -->
+    <footer class = "footer">
+        <p>Hineni — <i>"Here I am"</i></p>
+                <section id = "accessibility" class = "accessibility-section">
             <div class = "font-buttons">
                 <button id = "DyslexicFont" class = "dyslexic-button">
                     <span class = "dyslexia-button-text">Dyslexic-Friendly Font</span>
@@ -106,8 +157,7 @@
             <script src = "script.js"></script>
                 <!-- <script src = "script.js"></script> -->
         </section>
-
-    </main>
+    </footer>
 
 </body>
 </html>

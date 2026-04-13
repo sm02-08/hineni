@@ -4,6 +4,11 @@
     --link-color: #4a76ee; 
     --nav-bg: #d4f1f1; 
     --transition: 0.3s
+    --background-home: #f9f7f4; 
+    --background-about: #eef4fb; 
+    --background-tracks: #fdf6ee; 
+    --background-prizes: #f0f7f0; 
+    --background-accessibility: #fdf0f5; 
 }
 
 * { 
@@ -39,13 +44,15 @@ img {
 /* now onto the NAVIGATION BAR !!! */
 .navigation-bar { /* some typical all things navbar */
     position: sticky; /* makes the nav bar stick on top */
-    top: 5; 
+    top: 0; 
+    z-index: 999; /* so the nav bar doesnt get hidden underneath other stuff */
     display: flex;
     align-items: center; 
     justify-content: space-between;
-    padding: 0 48px;
+    padding: 14 48px;
     background: var(--nav-bg);
     /* border-box: 1px solid #000000; */
+    border-bottom: 1px solid #7cb5ff;
 }
 
 .navigation-bar .navigation { 
@@ -104,6 +111,7 @@ SECTION: THE TOPMOST PART ISH RIGHT BELOW BANNER
     align-items: center; /* aligns the "Hineni" right at the center below the banner */
     padding: 60px 40px 60px;
     gap: 0;
+    background-color: var(--background-color)
 }
 
 .home-section .home-image { 
@@ -111,9 +119,15 @@ SECTION: THE TOPMOST PART ISH RIGHT BELOW BANNER
     overflow: hidden;    
 }
 
+.home-section .home-title { /* changes font of title */
+    font-family: "Playwrite IE", serif; 
+    margin-top: 28px; 
+}
+
 .home-section .home-text { 
     text-align: center; 
     margin-top: 10px; 
+    max-width: 720px; /* maximum line length to enhance readability */
 }
 
 
@@ -125,18 +139,24 @@ SECTION: THE TOPMOST PART ISH RIGHT BELOW BANNER
     justify-content: center; 
     text-align: center; /* have the text align in the center based on the height of its parent element */
     padding: 0 50px; /* no padding on the y-axis, 50 px padding on the x-axis to match our nav bar */
-    margin: 50px 0; /* add spacing between the nav bar and the next section: 50 px on the y-axis, 0 on the x-axis */
+    margin: 0; /* add spacing between the nav bar and the next section: 50 px on the y-axis, 0 on the x-axis */
     margin-bottom: 100px; /* gap between hero and next section */
     gap: 40px; /* a gap of about 40 px between the text and the image */
+    background-color: var(--background-about);
+    padding-top: 60px; 
+    padding-bottom: 60px; /* breather space for the top and bottom */
 }
 
 .first-look .first-text h2 { 
     text-align: center;
     font-size: 45px; 
+    font-family: "Playwrite IE", serif;
+
 }
 
 .first-look .first-text { 
     margin-bottom: 16px; 
+    max-width: 500px; /* constraints on how long the text can get to width-wise */
 }
 
 .first-look .ysws-logo { 
@@ -144,6 +164,8 @@ SECTION: THE TOPMOST PART ISH RIGHT BELOW BANNER
     width: 200px; 
     height: 200px; 
     overflow: hidden; 
+    border-radius: 50%; /* make logo circular */
+    border: 3px solid #c8ddf5; /* subtle border on the logo */
 }
 
 .ysws-logo img { 
@@ -162,7 +184,7 @@ THE TRACKS SECTION -- CIRCLES YAY
     flex-direction: column;
     align-items: center; 
     gap: 48px; 
-    background-color: var(--background-color);
+    background-color: var(--background-tracks);
 }
 
 .tracks-heading { 
@@ -179,12 +201,12 @@ THE TRACKS SECTION -- CIRCLES YAY
     flex-wrap: wrap;
 }
 
-.track-1 { 
+.track-1, .track-2 { 
     text-decoration: none; 
     color: inherit;
 }
 
-.track-1-card { 
+.track-1-card, .track-2-card { 
     display: flex; 
     flex-direction: column; /* puts "track 1" on the bottom of the image instead of on the side */
     align-items: center; 
@@ -192,49 +214,146 @@ THE TRACKS SECTION -- CIRCLES YAY
     cursor: pointer;
 }
 
-.track-1-image { 
+.track-1-image, .track-2-image { 
     width: 220px; 
     height: 220px; 
     object-fit: cover; 
     border-radius: 50%; 
 }
 
-.track-1-label { 
+.track-1-label, .track-2-label { 
     text-decoration: none; 
     text-transform: uppercase;
     text-align: center; 
     font-weight: 500; 
 }
 
-/* TRACK 2 LABEL */
-.track-2 { 
-    text-decoration: none; 
-    color: inherit;
+.track-1-wrapper, .track-2-wrapper { 
+    position: relative; 
+    width: 220px; 
+    height: 220px; 
+    border-radius: 50%; 
+    overflow: hidden; 
 }
 
-.track-2-card { 
+.track-1-image, .track-2-image { 
+    width: 220px; 
+    height: 220px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    display: block; 
+    transition: opacity 0.35s ease; 
+}
+
+.track-1-hover, .track-2-hover { /* have an overlay when you hover over the track 1 & 2 part */
+    position: absolute; 
+    inset: 0; 
+    justify-content: center; 
+    gap: 10px; 
+    opacity: 0; 
+    transition: opacity 0.35s ease; 
+}
+
+.track-1-wrapper:hover .track-1-hover, .track-2-wrapper:hover .track-2-hover { 
+    opacity: 1;
+}
+
+.track-1-wraper:hover .track-1-image, .track-2-wrapper:hover .track-2-image { 
+    opacity: 0.3
+}
+
+
+.track-hover-img { 
+    border-radius: 50%; 
+    object-fit: cover; 
+}
+
+.track-hover-label { 
+    font-weight: 600; 
+    color: #ffffff;
+}
+
+.track-1-label, .track-2-label { 
+    text-decoration: none; 
+    text-align: center; 
+    font-weight: 500; 
+}
+
+/* 
+SECTION: PRIZES 
+carousel style 
+*/ 
+
+.prizes-section { 
+    padding: 72px 0 80px; 
+    background-color: var(--background-prizes);
+    overflow: hidden; 
     display: flex; 
-    flex-direction: column; /* puts "track 1" on the bottom of the image instead of on the side */
+    flex-direction: column; 
     align-items: center; 
-    gap: 18px; 
-    cursor: pointer;
+    gap: 40px;
 }
 
-.track-2-image { 
-    width: 220px; 
-    height: 220px; 
-    object-fit: cover; 
-    border-radius: 50%; 
-}
-
-.track-2-label { 
-    text-decoration: none; 
-    text-transform: uppercase;
+.prizes-heading { 
+    font-size: 1.8rem; 
+    font-weight: 500;
     text-align: center; 
-    font-weight: 500; 
+}
+
+.prizes-track-wrapper { 
+    width: 100%; 
+    overflow: hidden; /* hides the scrolling strip */
+    position: relative; 
+}
+
+.prizes-track-wrapper::before, .prizes-track-wrapper::after { 
+    position: ""; 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    width: 80px; 
+    z-index: 2; 
+    pointer-events: none; 
+}
+
+.prizes-track-wrapper::before { 
+    left: 0; 
+}
+
+.prizes-track-wrapper::after { 
+    right: 0; 
+}
+
+.prizes-track { 
+    display: flex; 
+    gap: 20px; 
+    width: max-content; 
+    animation: scroll-left 32s linear infinite; 
+}
+
+.prizes-item { 
+    flex-shrink: 0; 
+    border-radius: 20px; /* gives a soft rounding effect */
+    overflow: hidden;
 }
 
 
+.prizes-item img { 
+    width: 300px; 
+    height: 200px;
+    transition: transform 0.3s ease;
+    object-fit: cover; 
+    display: block; 
+}
+
+@keyframes scroll-left { /* scroll left animation */
+    0% {transform: translateX(0)}
+    100% {transform: translateX(-50%)} /* basically this moves the strip left by 50% and then jumps back to 0 after you hit photo 10, so that the jump looks invisible */
+}
+
+.prizes-track-wrapper:hover .prizes-track { 
+    animation-play-state: paused; /* if you hover over a picture, it pauses the entire carousel so that you don't have to keep trying to time it just right */
+}
 
 /*
 SECTION: ACCESSIBILITY (the dyslexia font) 
@@ -259,7 +378,7 @@ SECTION: ACCESSIBILITY (the dyslexia font)
     gap: 12px;
     padding: 14px 28px;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -269,6 +388,16 @@ SECTION: ACCESSIBILITY (the dyslexia font)
     gap: 12px;
     padding: 14px 28px;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     cursor: pointer;
+}
+
+
+/*
+FOOTER SECTION!!! 
+*/
+
+.footer { 
+    padding: 30px 30px;
+    text-align: center;
 }
