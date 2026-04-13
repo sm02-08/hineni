@@ -83,7 +83,6 @@ i want everything to be able to adjust and collapse on phone or stuff
 .t1-box { 
     background: #e3edff;
     border-radius: 10px; 
-    border-top: 4px solid #4a76ee; 
     transition: transform 0.3s ease;
     padding: 10px 28px;
 }
